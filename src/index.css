@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --cream: 36 33% 97%;
+    --coffee: 30 23% 9%;
+    --clay: 14 56% 65%;
+  }
+  
+  body {
+    @apply bg-[hsl(var(--cream))] text-[hsl(var(--coffee))];
+    font-feature-settings: "salt" on, "ss01" on, "ss02" on, "case" on, "kern" off;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, .display {
+    @apply font-display tracking-[-0.04em] font-black;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative px-4 py-2 text-lg transition-colors before:transition-colors;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-4 right-4 h-0.5 bg-[#b84900] scale-x-0 transition-transform duration-300 origin-left;
+  }
+  
+  .nav-link:hover::after {
+    @apply scale-x-100;
+  }
+  
+  .btn {
+    @apply relative inline-flex items-center justify-center px-6 py-3 text-lg font-medium rounded-full transition-all duration-300 overflow-hidden;
+  }
+  
+  .btn::before {
+    content: '';
+    @apply absolute inset-0 w-full h-full bg-current opacity-0 transition-opacity duration-300;
+  }
+  
+  .btn:hover::before {
+    @apply opacity-10;
+  }
+  
+  .btn-primary {
+    @apply bg-[#b84900] text-[hsl(var(--cream))] hover:scale-105;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-current hover:scale-105;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-25%); }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}

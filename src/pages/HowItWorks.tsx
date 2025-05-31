@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { setPageTitle } from '../utils/pageTitle';
 
 const HowItWorks = () => {
+  useEffect(() => {
+    setPageTitle('How It Works');
+  }, []);
+
   return (
     <div className="pt-36">
       <div className="max-w-3xl mx-auto px-4 md:px-6 py-12">

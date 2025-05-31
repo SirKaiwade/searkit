@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Users, TrendingUp, Check, Briefcase } from 'lucide-react';
+import { setPageTitle } from '../utils/pageTitle';
 
 const PartnershipsPage = () => {
+  useEffect(() => {
+    setPageTitle('Partnerships');
+  }, []);
+
   return (
     <div className="pt-36">
       {/* Title Section */}

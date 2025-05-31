@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Flame, ChefHat, Utensils, Recycle, ArrowRight } from 'lucide-react';
+import { setPageTitle } from '../utils/pageTitle';
 
 const HomePage = () => {
+  useEffect(() => {
+    setPageTitle('Home');
+  }, []);
+
   return (
     <div className="relative">
       {/* Hero Section */}

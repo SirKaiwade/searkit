@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { UploadCloud, Package, Edit, Palette, Type, Info, Instagram, Facebook, Globe, Plus, Minus } from 'lucide-react';
 import html2canvas from 'html2canvas';
+import { setPageTitle } from '../utils/pageTitle';
 
 const downloadDesign = async (previewRef) => {
   if (!previewRef.current) return;
@@ -23,6 +24,10 @@ const downloadDesign = async (previewRef) => {
 };
 
 const CustomizationTool = () => {
+  useEffect(() => {
+    setPageTitle('For Restaurants');
+  }, []);
+
   // State for customization options
   const [taglines, setTaglines] = useState(['Your Brand Here']);
   const [taglineSizes, setTaglineSizes] = useState(['medium']);

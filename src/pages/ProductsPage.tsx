@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { setPageTitle } from '../utils/pageTitle';
 
 const ProductsPage = () => {
+  useEffect(() => {
+    setPageTitle('Products');
+  }, []);
+
   const packages = [
       {
         title: "SearKit Classic (Family) - 4 Pack",
